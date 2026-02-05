@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7l3ivh44kt8i"]
+[gd_scene load_steps=5 format=3 uid="uid://c7l3ivh44kt8i"]
 
 [ext_resource type="Script" uid="uid://bfskwkdmbwx0q" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="Texture2D" uid="uid://bt6w11icwxund" path="res://icon.svg" id="2_rjlel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5obu"]
+atlas = ExtResource("2_rjlel")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e484p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5obu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="card" type="Node2D"]
 script = ExtResource("1_kikvd")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e484p")
 
 [node name="player" type="AudioStreamPlayer2D" parent="."]
