@@ -7,7 +7,8 @@ var inflame = 0
 #all cells start deactivated, and take one turn to activate (?)
 #NK cells can start active bc they don't need an activation signal
 var active = false
-var battle: PackedScene
+var battle: Node3D
+#this may have to change to accomodate it being a control nodde
 
 
 #for hover
@@ -21,6 +22,7 @@ var grow = true
 var selected = false
 
 func _ready():
+	battle = get_parent()
 	pivot_offset = size / 2
 	saveScale = scale
 

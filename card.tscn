@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7l3ivh44kt8i"]
+[gd_scene format=3 uid="uid://c7l3ivh44kt8i"]
 
 [ext_resource type="Script" uid="uid://bfskwkdmbwx0q" path="res://card.gd" id="1_kikvd"]
 [ext_resource type="Texture2D" uid="uid://bt6w11icwxund" path="res://icon.svg" id="2_rjlel"]
@@ -22,7 +22,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="card" type="Button"]
+[node name="card" type="Button" unique_id=1807505379]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -38,14 +38,14 @@ scale = Vector2(2, 2)
 script = ExtResource("1_kikvd")
 scaleCurve = SubResource("Curve_rjlel")
 
-[node name="sprite" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1797913607]
 position = Vector2(36.5, 57.5)
 scale = Vector2(2.20313, 3.40625)
 sprite_frames = SubResource("SpriteFrames_e484p")
 
-[node name="player" type="AudioStreamPlayer2D" parent="."]
+[node name="player" type="AudioStreamPlayer2D" parent="." unique_id=1392369305]
 
-[node name="hoverTimer" type="Timer" parent="."]
+[node name="hoverTimer" type="Timer" parent="." unique_id=1254301373]
 wait_time = 0.4
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
