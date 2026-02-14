@@ -7,21 +7,6 @@
 _data = [Vector2(0, 0.94382), 0.0, 0.0, 0, 0, Vector2(0.223404, 0.505618), 0.0, 0.0, 0, 0, Vector2(0.930851, 0.11236), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5obu"]
-atlas = ExtResource("2_rjlel")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_e484p"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q5obu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="card" type="Button" unique_id=1807505379]
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,10 +23,12 @@ scale = Vector2(2, 2)
 script = ExtResource("1_kikvd")
 scaleCurve = SubResource("Curve_rjlel")
 
-[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1797913607]
-position = Vector2(36.5, 57.5)
-scale = Vector2(2.20313, 3.40625)
-sprite_frames = SubResource("SpriteFrames_e484p")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=901191458]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 112.25
+texture = ExtResource("2_rjlel")
+expand_mode = 1
 
 [node name="player" type="AudioStreamPlayer2D" parent="." unique_id=1392369305]
 
