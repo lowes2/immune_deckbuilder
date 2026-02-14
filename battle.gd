@@ -23,7 +23,8 @@ func adjustInflammation(amount):
 		endBattle(-1)
 		
 		
-		
+func getEnemy():
+	return enemy
 
 #-1 state indicates death, 0/1 indicates win (0 for tie? not sure)
 func endBattle(state):
