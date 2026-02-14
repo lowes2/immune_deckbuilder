@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://b21grcurhbtmn"]
 
 [ext_resource type="Script" uid="uid://c2a5e6y3s6gu" path="res://enemy.gd" id="1_7k104"]
-[ext_resource type="Texture2D" uid="uid://bt6w11icwxund" path="res://icon.svg" id="2_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://8a255hldc6md" path="res://assets/enemies/bacteria.png" id="2_4gyqm"]
 
 [node name="enemy" type="Node2D"]
 script = ExtResource("1_7k104")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(0.999985, -1)
+scale = Vector2(0.0683761, 0.0683761)
 texture = ExtResource("2_4gyqm")

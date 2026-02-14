@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7l3ivh44kt8i"]
+[gd_scene load_steps=6 format=3 uid="uid://c7l3ivh44kt8i"]
 
 [ext_resource type="Script" uid="uid://bfskwkdmbwx0q" path="res://card.gd" id="1_kikvd"]
 [ext_resource type="Texture2D" uid="uid://bt6w11icwxund" path="res://icon.svg" id="2_rjlel"]
+
+[sub_resource type="Curve" id="Curve_rjlel"]
+_data = [Vector2(0, 0.94382), 0.0, 0.0, 0, 0, Vector2(0.223404, 0.505618), 0.0, 0.0, 0, 0, Vector2(0.930851, 0.11236), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q5obu"]
 atlas = ExtResource("2_rjlel")
@@ -18,10 +22,33 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="card" type="Node2D"]
+[node name="card" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -55.5
+offset_right = 37.0
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 script = ExtResource("1_kikvd")
+scaleCurve = SubResource("Curve_rjlel")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(36.5, 57.5)
+scale = Vector2(2.20313, 3.40625)
 sprite_frames = SubResource("SpriteFrames_e484p")
 
 [node name="player" type="AudioStreamPlayer2D" parent="."]
+
+[node name="hoverTimer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="hoverTimer" to="." method="_on_hover_timer_timeout"]
