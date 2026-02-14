@@ -7,7 +7,7 @@ var inflame = 0
 #all cells start deactivated, and take one turn to activate (?)
 #NK cells can start active bc they don't need an activation signal
 var active = false
-var battle: Node3D
+var battle: Node2D
 #this may have to change to accomodate it being a control nodde
 
 
