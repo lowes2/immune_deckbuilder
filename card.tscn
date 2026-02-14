@@ -7,6 +7,13 @@
 _data = [Vector2(0, 0.94382), 0.0, 0.0, 0, 0, Vector2(0.223404, 0.505618), 0.0, 0.0, 0, 0, Vector2(0.930851, 0.11236), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Gradient" id="Gradient_rjlel"]
+offsets = PackedFloat32Array(0, 0.5, 0.9934211, 1)
+colors = PackedColorArray(0.9411765, 0.27058825, 0, 1, 1, 1, 1, 1, 0.047058824, 0.047058824, 0.047058824, 0.36078432, 0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_q5obu"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="card" type="Button" unique_id=1807505379]
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,6 +41,43 @@ expand_mode = 1
 
 [node name="hoverTimer" type="Timer" parent="." unique_id=1254301373]
 wait_time = 0.4
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1009362804]
+position = Vector2(40, 2.75)
+emitting = false
+amount = 32
+lifetime = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(45, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 100.0
+initial_velocity_max = 250.0
+scale_amount_min = 15.0
+scale_amount_max = 25.0
+color_ramp = SubResource("Gradient_rjlel")
+hue_variation_min = -0.46
+hue_variation_max = 0.48
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CPUParticles2D" unique_id=889410401]
+position = Vector2(-1, 0)
+emitting = false
+amount = 32
+lifetime = 0.3
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(35, 1)
+gravity = Vector2(0, 0)
+angular_velocity_min = 178.15
+angular_velocity_max = 585.0
+radial_accel_min = 3.4
+radial_accel_max = 53.4
+damping_min = 0.125
+damping_max = 25.0
+scale_amount_min = 2.0
+scale_amount_max = 23.0
+color_ramp = SubResource("Gradient_q5obu")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
